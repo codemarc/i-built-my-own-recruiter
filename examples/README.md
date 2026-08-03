@@ -1,0 +1,12 @@
+# Examples
+
+Redacted sample reports showing what the system produces. All company names, URLs, and
+identifying details are fictional or scrubbed.
+
+## Contents
+
+- `sample-report.toon` — machine-readable output ([schema](../templates/report-schema.toon))
+- `sample-report.html` — the human-readable twin (TODO: generate from the TOON)
+
+See [Chapter 5](../book/05-machine-format-human-format.md) for why every report ships in both
+formats.

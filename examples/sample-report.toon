@@ -1,0 +1,44 @@
+@meta
+generated:2026-08-03
+sweep:daily
+count:3
+@/meta
+
+@role
+id:sample-001
+company:Northwind Robotics
+title:VP Engineering
+url:https://example.com/jobs/nw-vpe
+comp_base:275000
+remote:true
+score:88
+tier:Strong Yes
+dealbreakers_passed:true
+notes:Founder-led, hands-on scope, tolerates active side role. Outreach today.
+@/role
+
+@role
+id:sample-002
+company:Cirrus Data
+title:Director of Platform
+url:https://example.com/jobs/cd-dop
+comp_base:240000
+remote:true
+score:73
+tier:Yes
+dealbreakers_passed:true
+notes:Solid fit, comp near floor. Outreach this week.
+@/role
+
+@role
+id:sample-003
+company:Beacon Health
+title:Head of Engineering
+url:https://example.com/jobs/bh-hoe
+comp_base:210000
+remote:false
+score:41
+tier:Do Not Pursue
+dealbreakers_passed:false
+notes:Below comp floor and hybrid-required. Auto-archived.
+@/role

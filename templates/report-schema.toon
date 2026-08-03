@@ -1,0 +1,22 @@
+@meta
+generated:YYYY-MM-DD
+sweep:daily
+count:0
+@/meta
+
+@role
+id:example-001
+company:Example Co
+title:Director of Engineering
+url:https://example.com/jobs/000
+comp_base:0
+remote:true
+score:0
+tier:Do Not Pursue
+dealbreakers_passed:true
+notes:one-line rationale
+@/role
+
+# TOON schema for the dual-format report (see book/05-machine-format-human-format.md).
+# One @role block per scored posting. The HTML report is generated from the same data.
+# Machine format: agents reason over this. Human format: HTML skim in 90 seconds.
