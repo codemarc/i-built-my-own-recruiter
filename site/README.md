@@ -16,7 +16,7 @@ bun run preview  # serve dist/
 
 ## Deploy (DigitalOcean droplet via SCP)
 
-Same pattern as braintrailz-com-site: build static HTML, SCP into `html/recruiter/` on the droplet. nginx serves it under the main `braintrailz.com` vhost.
+Same pattern as braintrailz-com-site: build static HTML, SCP into `~/site/html/recruiter/` on the droplet. nginx serves it under the main `braintrailz.com` vhost.
 
 **Production URL:** https://braintrailz.com/recruiter/
 
@@ -25,7 +25,7 @@ Same pattern as braintrailz-com-site: build static HTML, SCP into `html/recruite
 Pull the nginx `location /recruiter/` block, then:
 
 ```bash
-cd /path/to/braintrailz-com-site/site
+cd ~/site
 mkdir -p html/recruiter
 docker compose exec nginx nginx -t && docker compose exec nginx nginx -s reload
 ```
@@ -34,16 +34,16 @@ No extra DNS or cert — same host as braintrailz.com.
 
 ### GitHub Actions secrets / vars
 
-Reuse the Braintrailz deploy credentials on this repo:
+Reuse the Braintrailz SSH credentials (do **not** set `DEPLOY_PATH` for this workflow — it hardcodes a flat `book-dist` staging dir so paths do not nest):
 
 | Name | Type | Notes |
 |------|------|--------|
 | `DEPLOY_KEY` | secret | SSH private key |
 | `DEPLOY_HOST` | variable | Droplet IP/host |
-| `DEPLOY_USER` | variable | SSH user |
+| `DEPLOY_USER` | variable | SSH user (home ≈ `~`) |
 | `DEPLOY_KNOWN_HOSTS` | variable | `ssh-keyscan` output |
-| `DEPLOY_PATH` | variable | Local artifact dir name, e.g. `deploy-dist` |
-| `DEPLOY_RECRUITER_TARGET` | variable | Remote path for SCP. If `DEPLOY_USER` home is `site/html`, use `recruiter` |
+
+Remote target is fixed: `~/site/html/recruiter` (contents of the Starlight `dist/`).
 
 Push to `main` (paths under `book/` or `site/`) or run **Deploy book site** manually.
 
@@ -52,7 +52,7 @@ Push to `main` (paths under `book/` or `site/`) or run **Deploy book site** manu
 ```bash
 cd site
 bun run build
-rsync -avz --delete dist/ ${DEPLOY_USER}@${DEPLOY_HOST}:recruiter/
+rsync -avz --delete dist/ ${DEPLOY_USER}@${DEPLOY_HOST}:site/html/recruiter/
 ```
 
 ## Theme

@@ -36,16 +36,17 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
+      # Flat staging dir — do NOT reuse Braintrailz DEPLOY_PATH (site/html),
+      # or scp-action preserves that path and lands files at
+      # ~/html/recruiter/site/html instead of ~/site/html/recruiter.
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
           name: book-site-build
-          path: ${{ vars.DEPLOY_PATH }}
+          path: book-dist
 
       - name: Debug - List downloaded artifacts
-        run: |
-          echo "Contents of downloaded artifacts:"
-          ls -la ${{ vars.DEPLOY_PATH }}
+        run: ls -la book-dist
 
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
@@ -54,26 +55,31 @@ jobs:
           known_hosts: ${{ vars.DEPLOY_KNOWN_HOSTS }}
           if_key_exists: fail
 
+      - name: Ensure remote directory exists
+        run: |
+          echo "${{ secrets.DEPLOY_KEY }}" > deploy_key
+          chmod 600 deploy_key
+          ssh -i deploy_key -o StrictHostKeyChecking=no ${{ vars.DEPLOY_USER }}@${{ vars.DEPLOY_HOST }} \
+            "mkdir -p site/html/recruiter"
+          rm deploy_key
+
       - name: Deploy to server
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ vars.DEPLOY_HOST }}
           username: ${{ vars.DEPLOY_USER }}
           key: ${{ secrets.DEPLOY_KEY }}
-          source: "${{ vars.DEPLOY_PATH }}/*"
-          # Sibling isolation not needed: files land in html/recruiter/.
-          # If DEPLOY_USER home is site/html (Braintrailz pattern), use `recruiter`.
-          target: ${{ vars.DEPLOY_RECRUITER_TARGET }}
-          strip_components: 0
+          source: "book-dist/*"
+          target: "site/html/recruiter"
+          strip_components: 1
           timeout: 30s
           command_timeout: "30s"
           overwrite: true
 
       - name: Verify deployment
         run: |
-          echo "Verifying deployment..."
           echo "${{ secrets.DEPLOY_KEY }}" > deploy_key
           chmod 600 deploy_key
           ssh -i deploy_key -o StrictHostKeyChecking=no ${{ vars.DEPLOY_USER }}@${{ vars.DEPLOY_HOST }} \
-            "ls -la ${{ vars.DEPLOY_RECRUITER_TARGET }} && echo '---' && pwd"
+            "ls -la site/html/recruiter && test -f site/html/recruiter/index.html && echo OK: index.html present"
           rm deploy_key
