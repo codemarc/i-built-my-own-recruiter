@@ -40,7 +40,7 @@ function rewriteLinks(body: string): string {
   return body
     .replace(/\]\(\.\.\/templates\//g, "](https://github.com/codemarc/i-built-my-own-recruiter/tree/main/templates/")
     .replace(/\]\(\.\.\/examples\//g, "](https://github.com/codemarc/i-built-my-own-recruiter/tree/main/examples/")
-    .replace(/\]\(([\w-]+)\.md\)/g, "](/book/$1/)");
+    .replace(/\]\(([\w-]+)\.md\)/g, "](/recruiter/book/$1/)");
 }
 
 async function main() {

@@ -2,45 +2,58 @@
 
 Static site for *I Built My Own Recruiter*. Chapters are authored in repo-root [`book/`](../book/); `bun run sync` copies them into Starlight with frontmatter.
 
+Built with `base: '/recruiter'` so it lives at **https://braintrailz.com/recruiter/**.
+
 ## Commands
 
 ```bash
 cd site
 bun install
-bun run dev      # sync + local preview
+bun run dev      # sync + local preview (http://localhost:4321/recruiter/)
 bun run build    # sync + static output → dist/
 bun run preview  # serve dist/
 ```
 
-## Deploy (Cloudflare Pages)
+## Deploy (DigitalOcean droplet via SCP)
 
-**Production URL:** https://recruiter.braintrailz.com
+Same pattern as braintrailz-com-site: build static HTML, SCP into `html/recruiter/` on the droplet. nginx serves it under the main `braintrailz.com` vhost.
 
-### Go-live checklist
+**Production URL:** https://braintrailz.com/recruiter/
 
-1. Create the GitHub repo `codemarc/i-built-my-own-recruiter`, commit, and push `main`.
-2. In Cloudflare → create Pages project `i-built-my-own-recruiter` (or let Actions create it on first deploy).
-3. Add GitHub Actions secrets on that repo:
-   - `CLOUDFLARE_API_TOKEN` — token with **Cloudflare Pages** edit permission
-   - `CLOUDFLARE_ACCOUNT_ID`
-4. Push to `main` or run the **Deploy book site** workflow.
-5. Cloudflare → Pages → Custom domains → `recruiter.braintrailz.com` + DNS CNAME to the Pages hostname.
+### One-time droplet setup (braintrailz-com-site)
 
-### Local one-shot deploy (after `wrangler login` or with env vars)
+Pull the nginx `location /recruiter/` block, then:
+
+```bash
+cd /path/to/braintrailz-com-site/site
+mkdir -p html/recruiter
+docker compose exec nginx nginx -t && docker compose exec nginx nginx -s reload
+```
+
+No extra DNS or cert — same host as braintrailz.com.
+
+### GitHub Actions secrets / vars
+
+Reuse the Braintrailz deploy credentials on this repo:
+
+| Name | Type | Notes |
+|------|------|--------|
+| `DEPLOY_KEY` | secret | SSH private key |
+| `DEPLOY_HOST` | variable | Droplet IP/host |
+| `DEPLOY_USER` | variable | SSH user |
+| `DEPLOY_KNOWN_HOSTS` | variable | `ssh-keyscan` output |
+| `DEPLOY_PATH` | variable | Local artifact dir name, e.g. `deploy-dist` |
+| `DEPLOY_RECRUITER_TARGET` | variable | Remote path for SCP. If `DEPLOY_USER` home is `site/html`, use `recruiter` |
+
+Push to `main` (paths under `book/` or `site/`) or run **Deploy book site** manually.
+
+### Manual one-shot from your laptop
 
 ```bash
 cd site
 bun run build
-bunx wrangler pages deploy dist --project-name=i-built-my-own-recruiter
+rsync -avz --delete dist/ ${DEPLOY_USER}@${DEPLOY_HOST}:recruiter/
 ```
-
-### Dashboard build settings (if not using Actions)
-
-| Setting | Value |
-|--------|--------|
-| Root directory | `site` |
-| Build command | `bun install && bun run build` |
-| Output directory | `dist` |
 
 ## Theme
 

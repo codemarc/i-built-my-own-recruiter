@@ -2,12 +2,14 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
-const SITE_URL = 'https://recruiter.braintrailz.com';
+const SITE_URL = 'https://braintrailz.com';
+const BASE = '/recruiter';
 const GITHUB_REPO = 'https://github.com/codemarc/i-built-my-own-recruiter';
 
 // https://astro.build/config
 export default defineConfig({
 	site: SITE_URL,
+	base: BASE,
 	integrations: [
 		starlight({
 			title: 'I Built My Own Recruiter',

@@ -10,11 +10,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
     steps:
       - uses: actions/checkout@v4
 
@@ -28,10 +25,55 @@ jobs:
           bun install --frozen-lockfile
           bun run build
 
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=i-built-my-own-recruiter
-          workingDirectory: site
+          name: book-site-build
+          path: site/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: book-site-build
+          path: ${{ vars.DEPLOY_PATH }}
+
+      - name: Debug - List downloaded artifacts
+        run: |
+          echo "Contents of downloaded artifacts:"
+          ls -la ${{ vars.DEPLOY_PATH }}
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.DEPLOY_KEY }}
+          known_hosts: ${{ vars.DEPLOY_KNOWN_HOSTS }}
+          if_key_exists: fail
+
+      - name: Deploy to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ vars.DEPLOY_HOST }}
+          username: ${{ vars.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_KEY }}
+          source: "${{ vars.DEPLOY_PATH }}/*"
+          # Sibling isolation not needed: files land in html/recruiter/.
+          # If DEPLOY_USER home is site/html (Braintrailz pattern), use `recruiter`.
+          target: ${{ vars.DEPLOY_RECRUITER_TARGET }}
+          strip_components: 0
+          timeout: 30s
+          command_timeout: "30s"
+          overwrite: true
+
+      - name: Verify deployment
+        run: |
+          echo "Verifying deployment..."
+          echo "${{ secrets.DEPLOY_KEY }}" > deploy_key
+          chmod 600 deploy_key
+          ssh -i deploy_key -o StrictHostKeyChecking=no ${{ vars.DEPLOY_USER }}@${{ vars.DEPLOY_HOST }} \
+            "ls -la ${{ vars.DEPLOY_RECRUITER_TARGET }} && echo '---' && pwd"
+          rm deploy_key
