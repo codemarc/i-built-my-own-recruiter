@@ -2,25 +2,54 @@
   Braintrailz-adjacent theme for the book.
   Accent: trail blue. Surfaces: slate night.
   Avoids default Starlight purple and cream/terracotta clusters.
+
+  Type: Atkinson Hyperlegible Next (Braille Institute) via Fontsource —
+  designed for character distinction and low-vision readability.
 */
 
+@import "@fontsource-variable/atkinson-hyperlegible-next/wght.css";
+@import "@fontsource-variable/atkinson-hyperlegible-next/wght-italic.css";
+
 :root {
-  --sl-font: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --sl-font-system: "DM Sans", "Avenir Next", "Segoe UI", sans-serif;
+  --sl-font: "Atkinson Hyperlegible Next Variable", "Atkinson Hyperlegible Next",
+    "Segoe UI", sans-serif;
+  --sl-font-system: "Atkinson Hyperlegible Next Variable",
+    "Atkinson Hyperlegible Next", "Segoe UI", sans-serif;
+
+  /* Larger base type + open leading for glasses / seasoned eyes */
+  --sl-text-2xs: 0.875rem; /* 14px (was 12) */
+  --sl-text-xs: 0.9375rem; /* 15px (was 13) */
+  --sl-text-sm: 1rem; /* 16px (was 14) */
+  --sl-text-base: 1.1875rem; /* 19px (was 16) */
+  --sl-text-lg: 1.3125rem; /* 21px (was 18) */
+  --sl-text-xl: 1.4375rem; /* 23px (was 20) */
+  --sl-text-2xl: 1.6875rem; /* 27px */
+  --sl-text-3xl: 2rem; /* 32px */
+  --sl-text-4xl: 2.375rem; /* 38px */
+  --sl-text-5xl: 2.875rem; /* 46px */
+  --sl-text-6xl: 4.25rem;
+
+  --sl-text-body: var(--sl-text-base);
+  --sl-line-height: 1.8;
+  --sl-line-height-headings: 1.25;
+  --sl-content-width: 48rem;
+
+  /* Higher contrast body text on dark */
   --sl-color-accent-low: #0c1a33;
   --sl-color-accent: #3b82f6;
   --sl-color-accent-high: #93c5fd;
   --sl-color-white: #f8fafc;
-  --sl-color-gray-1: #e2e8f0;
-  --sl-color-gray-2: #cbd5e1;
-  --sl-color-gray-3: #94a3b8;
-  --sl-color-gray-4: #64748b;
+  --sl-color-gray-1: #f1f5f9;
+  --sl-color-gray-2: #e2e8f0;
+  --sl-color-gray-3: #cbd5e1;
+  --sl-color-gray-4: #94a3b8;
   --sl-color-gray-5: #334155;
   --sl-color-gray-6: #1e293b;
   --sl-color-black: #030712;
   --sl-color-bg-nav: #0f172a;
   --sl-color-bg-sidebar: #0b1220;
   --sl-color-bg: #030712;
+  --sl-color-text: var(--sl-color-gray-1);
 }
 
 :root[data-theme="light"] {
@@ -31,7 +60,7 @@
   --sl-color-gray-1: #0f172a;
   --sl-color-gray-2: #1e293b;
   --sl-color-gray-3: #334155;
-  --sl-color-gray-4: #64748b;
+  --sl-color-gray-4: #475569;
   --sl-color-gray-5: #94a3b8;
   --sl-color-gray-6: #e2e8f0;
   --sl-color-gray-7: #f1f5f9;
@@ -39,24 +68,38 @@
   --sl-color-bg-nav: #f8fafc;
   --sl-color-bg-sidebar: #f1f5f9;
   --sl-color-bg: #ffffff;
+  --sl-color-text: var(--sl-color-gray-1);
 }
 
-/* Expressive display on splash hero */
+/* Comfortable reading measure + slight open tracking */
+.sl-markdown-content {
+  letter-spacing: 0.01em;
+  font-weight: 450;
+}
+
+.sl-markdown-content p,
+.sl-markdown-content li {
+  max-width: 65ch;
+}
+
+/* Expressive display on splash hero — no negative tracking */
 .hero-brand {
-  font-family: "DM Sans", "Avenir Next", "Segoe UI", sans-serif;
+  font-family: var(--sl-font);
   font-weight: 700;
-  letter-spacing: -0.03em;
-  font-size: clamp(2.4rem, 6vw, 3.75rem);
-  line-height: 1.05;
+  letter-spacing: 0;
+  font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+  line-height: 1.15;
   margin: 0 0 0.75rem;
 }
 
 .hero-premise {
-  font-family: "Source Serif 4", Georgia, serif;
-  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
-  line-height: 1.55;
-  max-width: 36rem;
+  font-family: var(--sl-font);
+  font-size: clamp(1.2rem, 2.4vw, 1.4rem);
+  line-height: 1.65;
+  letter-spacing: 0.01em;
+  max-width: 38rem;
   color: var(--sl-color-gray-2);
+  font-weight: 450;
 }
 
 .hero {
@@ -78,4 +121,31 @@
 
 .sl-markdown-content a[href*="github.com"] {
   font-weight: 600;
+}
+
+/* Larger text mode — A+ toggle in the header */
+:root[data-text-size="large"] {
+  --sl-text-2xs: 1rem;
+  --sl-text-xs: 1.0625rem;
+  --sl-text-sm: 1.125rem;
+  --sl-text-base: 1.375rem; /* 22px */
+  --sl-text-lg: 1.5rem;
+  --sl-text-xl: 1.625rem;
+  --sl-text-2xl: 1.875rem;
+  --sl-text-3xl: 2.25rem;
+  --sl-text-4xl: 2.625rem;
+  --sl-text-5xl: 3.125rem;
+  --sl-text-6xl: 4.5rem;
+  --sl-line-height: 1.85;
+  --sl-content-width: 52rem;
+}
+
+:root[data-text-size="large"] .sl-markdown-content {
+  letter-spacing: 0.015em;
+  font-weight: 500;
+}
+
+:root[data-text-size="large"] .hero-premise {
+  font-size: clamp(1.35rem, 2.6vw, 1.55rem);
+  line-height: 1.7;
 }

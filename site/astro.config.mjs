@@ -20,28 +20,14 @@ export default defineConfig({
 				{ icon: 'github', label: 'GitHub', href: GITHUB_REPO },
 			],
 			customCss: ['./src/styles/custom.css'],
+			components: {
+				ThemeSelect: './src/components/ThemeSelect.astro',
+			},
 			head: [
 				{
-					tag: 'link',
-					attrs: {
-						rel: 'preconnect',
-						href: 'https://fonts.googleapis.com',
-					},
-				},
-				{
-					tag: 'link',
-					attrs: {
-						rel: 'preconnect',
-						href: 'https://fonts.gstatic.com',
-						crossorigin: true,
-					},
-				},
-				{
-					tag: 'link',
-					attrs: {
-						rel: 'stylesheet',
-						href: 'https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap',
-					},
+					// Apply larger-text preference before paint to avoid a size flash.
+					tag: 'script',
+					content: `(function(){try{var s=localStorage.getItem('starlight-text-size');if(s==='large')document.documentElement.dataset.textSize='large';}catch(e){}})();`,
 				},
 			],
 			sidebar: [

@@ -1,0 +1,119 @@
+---
+/**
+ * Binary larger-text control for seasoned eyes.
+ * Persists in localStorage; early apply happens via Head script in astro.config.
+ */
+---
+
+<starlight-text-size-toggle>
+	<button
+		type="button"
+		class="text-size-toggle"
+		aria-pressed="false"
+		aria-label="Larger text"
+		title="Larger text"
+	>
+		<span class="text-size-toggle__label" aria-hidden="true">
+			<span class="text-size-toggle__a">A</span>
+			<span class="text-size-toggle__plus">+</span>
+		</span>
+	</button>
+</starlight-text-size-toggle>
+
+<script>
+	type TextSize = 'default' | 'large';
+
+	const storageKey = 'starlight-text-size';
+
+	const parseSize = (value: unknown): TextSize => (value === 'large' ? 'large' : 'default');
+
+	const loadSize = (): TextSize =>
+		parseSize(typeof localStorage !== 'undefined' && localStorage.getItem(storageKey));
+
+	function storeSize(size: TextSize): void {
+		if (typeof localStorage === 'undefined') return;
+		if (size === 'large') localStorage.setItem(storageKey, 'large');
+		else localStorage.removeItem(storageKey);
+	}
+
+	function applySize(size: TextSize): void {
+		document.documentElement.dataset.textSize = size;
+		document.querySelectorAll('starlight-text-size-toggle button').forEach((button) => {
+			const pressed = size === 'large';
+			button.setAttribute('aria-pressed', String(pressed));
+			button.setAttribute('aria-label', pressed ? 'Default text size' : 'Larger text');
+			button.setAttribute('title', pressed ? 'Default text size' : 'Larger text');
+		});
+	}
+
+	class StarlightTextSizeToggle extends HTMLElement {
+		constructor() {
+			super();
+			applySize(loadSize());
+			this.querySelector('button')?.addEventListener('click', () => {
+				const next: TextSize = loadSize() === 'large' ? 'default' : 'large';
+				storeSize(next);
+				applySize(next);
+			});
+		}
+	}
+
+	if (!customElements.get('starlight-text-size-toggle')) {
+		customElements.define('starlight-text-size-toggle', StarlightTextSizeToggle);
+	}
+</script>
+
+<style>
+	.text-size-toggle {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 2.5rem;
+		height: 2.5rem;
+		padding: 0 0.45rem;
+		margin: 0;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.375rem;
+		background: transparent;
+		color: var(--sl-color-gray-2);
+		cursor: pointer;
+		font-family: var(--__sl-font);
+		line-height: 1;
+	}
+
+	.text-size-toggle:hover {
+		color: var(--sl-color-white);
+		border-color: var(--sl-color-gray-4);
+	}
+
+	.text-size-toggle:focus-visible {
+		outline: 2px solid var(--sl-color-accent);
+		outline-offset: var(--sl-outline-offset-inside);
+	}
+
+	.text-size-toggle[aria-pressed='true'] {
+		color: var(--sl-color-white);
+		border-color: var(--sl-color-accent);
+		background: color-mix(in srgb, var(--sl-color-accent) 18%, transparent);
+	}
+
+	.text-size-toggle__label {
+		display: inline-flex;
+		align-items: baseline;
+		gap: 0.05rem;
+		font-weight: 700;
+	}
+
+	.text-size-toggle__a {
+		font-size: 1.05rem;
+	}
+
+	.text-size-toggle__plus {
+		font-size: 0.85rem;
+		font-weight: 700;
+	}
+
+	.text-size-toggle[aria-pressed='true'] .text-size-toggle__a {
+		font-size: 1.25rem;
+	}
+</style>
