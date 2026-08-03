@@ -1,0 +1,10 @@
+# Dependencies & build
+site/node_modules/
+site/dist/
+site/.astro/
+site/src/content/docs/book/
+
+# OS / editor
+.DS_Store
+.env
+.env.*

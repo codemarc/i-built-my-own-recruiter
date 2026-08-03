@@ -1,0 +1,4 @@
+# Cloudflare Pages — static Astro/Starlight output
+name = "i-built-my-own-recruiter"
+compatibility_date = "2026-08-03"
+pages_build_output_dir = "dist"
