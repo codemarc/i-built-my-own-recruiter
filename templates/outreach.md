@@ -27,4 +27,5 @@ you *edit*, not one you *rewrite*. Peer to peer, not applicant to gatekeeper.
 ## Voice notes
 
 - Feed the system 5–10 real messages you've written so drafts sound like you.
+- For standing self-description, prefer blocks from [`identity-narratives.md`](identity-narratives.md) over inventing new bio copy.
 - If a draft needs a full rewrite, the voice capture isn't done yet.
