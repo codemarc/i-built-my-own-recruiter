@@ -60,7 +60,7 @@ jobs:
           host: ${{ vars.DEPLOY_HOST }}
           username: ${{ vars.DEPLOY_USER }}
           key: ${{ secrets.DEPLOY_KEY }}
-          source: "${{ vars.DEPLOY_PATH }}/site/html/*"
+          source: "${{ vars.DEPLOY_PATH }}/*"
           # Sibling isolation not needed: files land in html/recruiter/.
           # If DEPLOY_USER home is site/html (Braintrailz pattern), use `recruiter`.
           target: ${{ vars.DEPLOY_RECRUITER_TARGET }}
