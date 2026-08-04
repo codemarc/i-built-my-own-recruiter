@@ -1,4 +1,6 @@
-# 3. Define What "Great" Looks Like — Between the Nos and the Points
+# 3. Define What "Great" Looks Like
+
+Between the Nos and the Points
 
 Ted Williams, *The Science of Hitting* (1970):
 
@@ -9,6 +11,8 @@ Chapter 2 gave you the pitches you never swing at. Dealbreakers are the balls ou
 Most prior treatments of "know what you want" are either aspirational fluff (mood boards, vision boards, "dream role" listicles) or reduced to a title-and-comp fill-in. Neither survives contact with an actual sweep. What survives is a small number of *ranked criteria with a paragraph-length definition of "great" for each one*, sitting cleanly between the dealbreakers that reject and the rubric that scores.
 
 ---
+
+
 
 ## Why criteria come between dealbreakers and the rubric
 
@@ -23,6 +27,8 @@ Criteria are the missing middle. They answer three questions the dealbreakers do
 Only after these are written does the rubric have anchors. "Compensation is worth 25 points because" needs a *because* that comes from your criteria, not from a template.
 
 ---
+
+
 
 ## The clarity interview, honestly done
 
@@ -43,6 +49,8 @@ AI is now able to fill this role, but only if you instruct it to push back rathe
 
 ---
 
+
+
 ## Rank before you refine
 
 Here is the move most people skip: **the order of the categories is itself a decision.**
@@ -54,6 +62,8 @@ At 32, my top would have been role shape and trajectory. At 62, with a co-founde
 Rank cold. Not against a specific role. Cold ranking is durable; warm ranking is a rationalization.
 
 ---
+
+
 
 ## Define "great" as a paragraph, not an adjective
 
@@ -67,17 +77,21 @@ The test for a criterion: could a tired version of you evaluate a role against i
 
 A few patterns that work:
 
-| Adjective (useless) | Paragraph (usable) |
-|---------------------|--------------------|
-| Great comp | Floor $X, target $Y, strong-yes $Z, cash vs. equity preference, benefits stance |
-| Great manager | Peer-in-the-foxhole vs. sponsor-from-above; matching work ethic; substantive vs. metric-only |
-| Great culture | Founder-led vs. committee; overhead tolerance; specific cultural filters that would create friction |
-| Great flexibility | Hours-vs-outcomes measurement; schedule autonomy specifics; disclosure requirements |
-| Great work | The three-sentence description of the shape of daily practice you're here to do |
+
+| Adjective (useless) | Paragraph (usable)                                                                                  |
+| ------------------- | --------------------------------------------------------------------------------------------------- |
+| Great comp          | Floor $X, target $Y, strong-yes $Z, cash vs. equity preference, benefits stance                     |
+| Great manager       | Peer-in-the-foxhole vs. sponsor-from-above; matching work ethic; substantive vs. metric-only        |
+| Great culture       | Founder-led vs. committee; overhead tolerance; specific cultural filters that would create friction |
+| Great flexibility   | Hours-vs-outcomes measurement; schedule autonomy specifics; disclosure requirements                 |
+| Great work          | The three-sentence description of the shape of daily practice you're here to do                     |
+
 
 Every one of these is a paragraph because you'll refer to them a hundred times over a search. Adjectives don't survive that many applications. Paragraphs do.
 
 ---
+
+
 
 ## The two-truths problem
 
@@ -94,6 +108,8 @@ If your context has two truths — pragmatic and long-arc, or family and career,
 
 ---
 
+
+
 ## Sustainability vs. capstone
 
 One more meta-move that changed my criteria: I stopped optimizing for a capstone.
@@ -105,6 +121,8 @@ Naming that changed my ranking. Comp moved up because stability matters more tha
 Your version of this question is not "capstone or sustainability?" It's "what am I actually optimizing for right now, and does my ranking reflect it?" If your ranking is the ranking a career coach would produce for a generic senior candidate, it's not yours.
 
 ---
+
+
 
 ## How criteria feed the rubric
 
@@ -118,16 +136,20 @@ The rubric in chapter 4 is where this becomes numeric. This chapter just makes s
 
 ---
 
+
+
 ## The worksheet
 
-Fill this in before you touch the rubric. A sanitized copy lives in [`templates/criteria.md`](../templates/criteria.md). Replace the categories, the ranking, and the paragraphs with your own — the whole point is that generic criteria produce generic scoring.
+Fill this in before you touch the rubric. A sanitized copy lives in `[templates/criteria.md](../templates/criteria.md)`. Replace the categories, the ranking, and the paragraphs with your own — the whole point is that generic criteria produce generic scoring.
 
-| # | Category | "Great" looks like (paragraph, not adjective) |
-|---|----------|-----------------------------------------------|
-| 1 | *your top-priority category* | *paragraph* |
-| 2 | *next* | *paragraph* |
-| 3 | *next* | *paragraph* |
-| … | | |
+
+| #   | Category                     | "Great" looks like (paragraph, not adjective) |
+| --- | ---------------------------- | --------------------------------------------- |
+| 1   | *your top-priority category* | *paragraph*                                   |
+| 2   | *next*                       | *paragraph*                                   |
+| 3   | *next*                       | *paragraph*                                   |
+| …   |                              |                                               |
+
 
 Guidelines that kept mine from becoming a wish list:
 
