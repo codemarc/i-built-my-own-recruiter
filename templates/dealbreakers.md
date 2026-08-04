@@ -9,11 +9,11 @@ in the rubric instead.
 | Comp floor | `base >= $___` | hard |
 | Location / arrangement | `remote == true AND relocation == false` | hard |
 | Disclosure / constraints | `tolerates_active_side_role == true` | hard |
-| Culture fit | `___` | soft |
+| Culture fit | `___` *(one-line invariant)* | soft → hard if repeated |
 | Role shape | `hands_on == true` | soft |
 
 ## Guidelines
 
 - Phrase every rule so a machine can return true/false — no vibes.
 - Keep hard dealbreakers few. Everything else belongs in the rubric.
-- Revisit after a thin sweep (see [Chapter 9](../book/09-when-the-market-goes-quiet.md)).
+- Revisit after a thin sweep (see [Chapter 10](../book/10-when-the-market-goes-quiet.md)).

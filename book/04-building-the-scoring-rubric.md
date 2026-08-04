@@ -1,4 +1,4 @@
-# 3. Building the Scoring Rubric
+# 4. Building the Scoring Rubric
 
 A dealbreaker check tells you what to throw out. A rubric tells you what to chase. Mine is 100 points, four tiers, Strong Yes down to Do Not Pursue, and it took three rewrites before it stopped rewarding roles that looked good on paper and felt wrong in practice. This chapter walks through how to convert a fuzzy feeling ("this seems like a stretch") into a scored, defensible line item, and why the rubric needs to be written before you're emotionally attached to a specific job.
 
@@ -31,4 +31,4 @@ A dealbreaker check tells you what to throw out. A rubric tells you what to chas
 
 ---
 
-*Next: [Automating the Daily Sweep →](04-automating-the-daily-sweep.md)*
+*Next: [Automating the Daily Sweep →](05-automating-the-daily-sweep.md)*

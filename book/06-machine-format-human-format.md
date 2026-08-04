@@ -1,4 +1,4 @@
-# 5. Machine Format, Human Format — Why Every Report Ships Twice
+# 6. Machine Format, Human Format — Why Every Report Ships Twice
 
 Every report my system produces comes out twice: once as structured data an agent can reason over, once as a page a human can skim in ninety seconds. This isn't redundancy, it's two different audiences with two different jobs. This chapter explains the dual-format convention, why it matters even if you're a search of one, and how to set it up so future-you (or a future agent working on your behalf) can pick up the thread without re-reading everything from scratch.
 
@@ -26,4 +26,4 @@ Every report my system produces comes out twice: once as structured data an agen
 
 ---
 
-*Next: [From Match to Message →](06-from-match-to-message.md)*
+*Next: [From Match to Message →](07-from-match-to-message.md)*

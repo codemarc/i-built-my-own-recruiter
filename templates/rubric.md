@@ -1,6 +1,6 @@
 # Scoring Rubric (Template)
 
-Sanitized 100-point rubric from [Chapter 3](../book/03-building-the-scoring-rubric.md). Adjust
+Sanitized 100-point rubric from [Chapter 4](../book/04-building-the-scoring-rubric.md). Adjust
 the dimensions and weights to your own priorities — the weights must sum to 100.
 
 ## Dimensions

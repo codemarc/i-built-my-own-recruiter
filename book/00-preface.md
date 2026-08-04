@@ -37,7 +37,7 @@ It is also not a guarantee of a job. I built this during an active search. The n
 
 In order if you want the arc: problem, dealbreakers, rubric, sweep, reports, outreach, resumes, memory, quiet markets, limits, fork, close.
 
-Or jump to your current pain. Every chapter is written to stand alone. Stuck in tab hell? Start at chapter 1. Already know your dealbreakers? Skip to the rubric. Ready to build? Chapter 11 is the weekend plan. The templates in the repo are the same artifacts the chapters describe; fill them with your constraints, not mine.
+Or jump to your current pain. Every chapter is written to stand alone. Stuck in tab hell? Start at chapter 1. Already know your dealbreakers? Skip to the criteria and the rubric. Ready to build? Chapter 12 is the weekend plan. The templates in the repo are the same artifacts the chapters describe; fill them with your constraints, not mine.
 
 ## A note on honesty
 

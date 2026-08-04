@@ -1,4 +1,4 @@
-# 6. From Match to Message — Outreach That Doesn't Sound Like a Robot
+# 7. From Match to Message — Outreach That Doesn't Sound Like a Robot
 
 A scored match is worthless if the outreach that follows it reads like a form letter. The hardest part of this system wasn't the scoring, it was teaching it to write like me: peer to peer, not applicant to gatekeeper. This chapter covers how to capture your own voice well enough that a drafted message needs editing, not rewriting, and why that distinction is the difference between a tool you use and a tool you trust.
 
@@ -26,4 +26,4 @@ A scored match is worthless if the outreach that follows it reads like a form le
 
 ---
 
-*Next: [Resume Tailoring at Scale →](07-resume-tailoring-at-scale.md)*
+*Next: [Resume Tailoring at Scale →](08-resume-tailoring-at-scale.md)*

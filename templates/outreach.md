@@ -1,6 +1,6 @@
 # Outreach Template
 
-Sanitized structure from [Chapter 6](../book/06-from-match-to-message.md). The goal is a draft
+Sanitized structure from [Chapter 7](../book/07-from-match-to-message.md). The goal is a draft
 you *edit*, not one you *rewrite*. Peer to peer, not applicant to gatekeeper.
 
 ## Structure

@@ -1,4 +1,4 @@
-# 4. Automating the Daily Sweep
+# 5. Automating the Daily Sweep
 
 Once the rubric exists, the search can run without you. Mine runs three separate sweeps every morning before I'm awake, each tuned to a different slice of the market, because a single broad search buries the roles that actually fit under the roles that merely mention the right keywords. This chapter covers how to structure scheduled searches so they narrow instead of just repeat, and what to do with the results before you've had coffee.
 
@@ -22,4 +22,4 @@ Once the rubric exists, the search can run without you. Mine runs three separate
 
 ---
 
-*Next: [Machine Format, Human Format →](05-machine-format-human-format.md)*
+*Next: [Machine Format, Human Format →](06-machine-format-human-format.md)*

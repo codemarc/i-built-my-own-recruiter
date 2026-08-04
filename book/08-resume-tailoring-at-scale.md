@@ -1,4 +1,4 @@
-# 7. Resume Tailoring at Scale
+# 8. Resume Tailoring at Scale
 
 Generic resumes get generic outcomes. But hand-tailoring every application doesn't scale past your fifth week of searching. This chapter covers the middle path: a base resume as source of truth, and a repeatable process for producing company-specific versions fast enough that tailoring stops being the bottleneck.
 
@@ -22,4 +22,4 @@ Generic resumes get generic outcomes. But hand-tailoring every application doesn
 
 ---
 
-*Next: [Teaching the System to Remember →](08-teaching-the-system-to-remember.md)*
+*Next: [Teaching the System to Remember →](09-teaching-the-system-to-remember.md)*
