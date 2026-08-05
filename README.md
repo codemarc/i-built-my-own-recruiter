@@ -35,7 +35,7 @@
 i-built-my-own-recruiter/
 ├── README.md              # premise + TOC
 ├── book/                  # source of truth — one markdown file per chapter
-├── templates/             # sanitized rubric, sweeps, TOON schema, outreach template
+├── templates/             # sanitized rubric, sweeps, TOON schema, outreach + resume templates
 ├── examples/              # redacted sample reports
 └── site/                  # Astro + Starlight reader (builds from book/)
 ```
