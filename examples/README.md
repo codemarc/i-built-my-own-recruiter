@@ -6,7 +6,7 @@ identifying details are fictional or scrubbed.
 ## Contents
 
 - `sample-report.toon` — machine-readable output ([schema](../templates/report-schema.toon))
-- `sample-report.html` — the human-readable twin (TODO: generate from the TOON)
+- `sample-report.html` — human-readable twin of the same three roles
 
 See [Chapter 6](../book/06-machine-format-human-format.md) for why every report ships in both
 formats.

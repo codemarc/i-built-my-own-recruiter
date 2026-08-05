@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily sweep report — 2026-08-03</title>
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --muted: #5c5c5c;
+      --line: #d8d8d8;
+      --bg: #fafaf8;
+      --strong: #0b3d2e;
+      --yes: #1a3a5c;
+      --archive: #6b6b6b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", "Source Sans 3", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.45;
+    }
+    main {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+    header h1 {
+      font-size: 1.35rem;
+      font-weight: 650;
+      margin: 0 0 0.35rem;
+    }
+    header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .meta {
+      margin: 1.25rem 0 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    section { margin-bottom: 2rem; }
+    h2 {
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin: 0 0 0.75rem;
+    }
+    h2.strong { color: var(--strong); }
+    h2.yes { color: var(--yes); }
+    h2.archive { color: var(--archive); }
+    article {
+      padding: 0.85rem 0;
+      border-top: 1px solid var(--line);
+    }
+    article:last-child { border-bottom: 1px solid var(--line); }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.75rem;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+    .title {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+    .score {
+      font-variant-numeric: tabular-nums;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+    .company { color: var(--muted); font-size: 0.95rem; }
+    .notes { margin: 0.4rem 0 0; font-size: 0.95rem; }
+    a { color: inherit; }
+    a.url {
+      font-size: 0.85rem;
+      color: var(--muted);
+      word-break: break-all;
+    }
+    footer {
+      margin-top: 2.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Daily sweep report</h1>
+      <p>Human twin of <code>sample-report.toon</code>. Skim, decide, stop.</p>
+    </header>
+
+    <p class="meta">Generated 2026-08-03 · sweep: daily · 3 roles · Strong Yes first</p>
+
+    <section>
+      <h2 class="strong">Strong Yes · outreach today</h2>
+      <article>
+        <div class="row">
+          <span class="title">VP Engineering</span>
+          <span class="score">88</span>
+        </div>
+        <div class="company">Northwind Robotics · remote · $275K base</div>
+        <p class="notes">Founder-led, hands-on scope, tolerates active side role. Outreach today.</p>
+        <p><a class="url" href="https://example.com/jobs/nw-vpe">https://example.com/jobs/nw-vpe</a></p>
+      </article>
+    </section>
+
+    <section>
+      <h2 class="yes">Yes · outreach this week</h2>
+      <article>
+        <div class="row">
+          <span class="title">Director of Platform</span>
+          <span class="score">73</span>
+        </div>
+        <div class="company">Cirrus Data · remote · $240K base</div>
+        <p class="notes">Solid fit, comp near floor. Outreach this week.</p>
+        <p><a class="url" href="https://example.com/jobs/cd-dop">https://example.com/jobs/cd-dop</a></p>
+      </article>
+    </section>
+
+    <section>
+      <h2 class="archive">Archived · dealbreaker / do not pursue</h2>
+      <article>
+        <div class="row">
+          <span class="title">Head of Engineering</span>
+          <span class="score">41</span>
+        </div>
+        <div class="company">Beacon Health · hybrid · $210K base</div>
+        <p class="notes">Below comp floor and hybrid-required. Auto-archived.</p>
+        <p><a class="url" href="https://example.com/jobs/bh-hoe">https://example.com/jobs/bh-hoe</a></p>
+      </article>
+    </section>
+
+    <footer>
+      Machine source of truth: <code>sample-report.toon</code>.
+      See book chapter 6 for the dual-format convention.
+    </footer>
+  </main>
+</body>
+</html>

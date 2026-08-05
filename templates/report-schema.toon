@@ -17,6 +17,6 @@ dealbreakers_passed:true
 notes:one-line rationale
 @/role
 
-# TOON schema for the dual-format report (see book/05-machine-format-human-format.md).
+# TOON schema for the dual-format report (see book/06-machine-format-human-format.md).
 # One @role block per scored posting. The HTML report is generated from the same data.
 # Machine format: agents reason over this. Human format: HTML skim in 90 seconds.

@@ -18,7 +18,7 @@ add more only when you can name an intent the existing ones miss.
 2. Apply hard dealbreakers ([`dealbreakers.md`](dealbreakers.md)). Failures archive; do not score.
 3. Score survivors with the rubric ([`rubric.md`](rubric.md)).
 4. Deduplicate across sweeps (prefer canonical ATS URL; keep higher-confidence record).
-5. Emit one ranked report for the morning handoff ([`report-schema.toon`](report-schema.toon)).
+5. Emit dual report for the morning handoff: TOON canonical + HTML skim ([`report-schema.toon`](report-schema.toon), [Ch. 6](../book/06-machine-format-human-format.md)).
 
 ## Morning handoff ritual
 
