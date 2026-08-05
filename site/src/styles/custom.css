@@ -111,11 +111,18 @@
   display: none;
 }
 
-/* Subtle trail atmosphere on splash */
+/* Subtle trail atmosphere on splash — light accent only.
+   A near-opaque dark radial on the right read as a broken graphic in light mode. */
 [data-has-hero] .page {
   background:
     radial-gradient(ellipse 80% 50% at 10% 0%, rgba(59, 130, 246, 0.12), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 90% 20%, rgba(15, 23, 42, 0.9), transparent 50%),
+    var(--sl-color-bg);
+}
+
+:root[data-theme="dark"] [data-has-hero] .page {
+  background:
+    radial-gradient(ellipse 80% 50% at 10% 0%, rgba(59, 130, 246, 0.14), transparent 55%),
+    radial-gradient(ellipse 50% 35% at 92% 18%, rgba(59, 130, 246, 0.08), transparent 55%),
     var(--sl-color-bg);
 }
 
