@@ -8,7 +8,7 @@ Ted Williams, *The Science of Hitting* (1970):
 
 Chapter 2 gave you the pitches you never swing at. Dealbreakers are the balls out of the zone: hard nos, machine-checkable, applied without fatigue. This chapter is about the *pitch you're actually waiting for*: the one you'd pull for a stand-up double, the one that matches your swing. Great hitters don't swing at everything in the zone. They wait.
 
-Most prior treatments of "know what you want" are either aspirational fluff (mood boards, vision boards, "dream role" listicles) or reduced to a title-and-comp fill-in. Neither survives contact with an actual sweep. What survives is a small number of *ranked criteria with a paragraph-length definition of "great" for each one*, sitting cleanly between the dealbreakers that reject and the rubric that scores.
+Most prior treatments of "know what you want" are either aspirational fluff (mood boards, vision boards, "dream role" listicles) or reduced to a title-and-comp fill-in. Neither survives contact with an actual sweep. What survives is a small number of *ranked criteria with a paragraph-length definition of "great" for each one*, sitting cleanly between the dealbreakers that reject and the rubric that scores. You do not need a finished picture of the dream job before you start. You need circles you already own, and a way to keep drawing.
 
 ---
 
@@ -46,6 +46,38 @@ Fourteen questions is not a magic number. It's about right for a single sitting 
 The friction of the interview matters more than the questions. Every time I answered vaguely, the interviewer pushed back: reflected what I'd said, named the pattern I was avoiding, asked why I'd said "the chapter I liked least" without saying what was actually wrong. That friction is the whole exercise. Compliance kills it.
 
 AI is now able to fill this role, but only if you instruct it to push back rather than affirm. *"Be my career coach. Ask me these questions one at a time. When I answer vaguely, reflect what I said back and ask a sharper follow-up. Don't move on until my answer is specific."* That prompt, or one like it, is the whole trick. Left to its defaults, most AI will nod through your answers. Ask it to be the friction.
+
+---
+
+
+
+## Draw the Owl
+
+"Draw the Owl" is a core value popularized by Twilio, from a 2010 meme:
+
+Step 1: Draw some circles.  
+Step 2: Draw the rest of the owl.
+
+The joke is the gap. The instruction is the point. When you're building something new, there is rarely a manual. You put down what you *do* know, take ownership, and figure out the rest in motion.
+
+A job search is the same kind of blank page, with worse marketing. Job boards will happily draw something that looks like an owl if you feed them titles and buzzwords. Auto-apply tools will draw a hundred of them overnight. None of that is *your* owl. Your owl is the role that matches who you actually are under pressure: the floor you won't drop, the craft you won't fake, the life constraints you won't hide, the ceiling you're honestly optimizing for right now (not the one a career coach would invent for a generic senior candidate).
+
+Owning your own search means refusing to wait for a finished picture before you start. It also means refusing to outsource the picture to volume.
+
+**The circles are already in your hands.** Comp floor. Remote. The side work you won't quit. The shape of daily practice that doesn't drain you. The culture you survive contact with as yourself. Chapter 2 made the hard nos machine-checkable. Those nos are circles: incomplete, load-bearing, yours. The clarity interview above is how you name more of them out loud.
+
+**The rest of the owl is not a mood board.** It is ranked criteria with paragraph-length definitions of "great," written cold, then pressure-tested by real postings. You will not finish that picture in one sitting. You will get sharper because the sweep keeps returning roles that almost fit, and you have to say *why* they almost fit. That is how the dream job stops being an adjective and becomes a set of paragraphs you can score twice the same way when you're tired.
+
+If the project in front of you feels impossible because no one handed you instructions, ask three questions:
+
+- What is the vague or daunting thing (the search, the next title, the "what do I want")?
+- What circles are already clear, even if they're basic?
+- What unknown are you treating as a reason not to draw at all?
+
+My own longer attempt at drawing the owl lives here:  
+https://blog.codemarc.net/series/duck-to-dss
+
+This book is the same move applied to the search. Dealbreakers and criteria are the circles. The rubric, the sweep, and the morning report are how you keep drawing without letting the market redraw you. Everything after the circles is the owl, and nobody else can finish it for you.
 
 ---
 

@@ -2,6 +2,8 @@
 
 Everything in this book is meant to be copied. This chapter is the build guide: the minimum viable version of the system (rubric, one scheduled sweep, one report format) you can stand up in a weekend, plus the repo structure so you can grow it the same way I did, one chapter at a time.
 
+Chapter 3's owl applies to the build too. Rubric, one scheduled sweep, one report format: those are the circles. Do not wait for the full machine before you run the first morning. Draw what you know. Fork the rest.
+
 ---
 
 ## The minimum viable system
