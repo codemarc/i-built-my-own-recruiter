@@ -13,7 +13,7 @@ Above all, I see myself as a software artisan: I design things, build things, co
 That sharing is also how I think about mentorship. Mentor from inside the craft, not above it. Stay in the work. Teach method, not costume: the load-bearing patterns (how to score a role, how to clear fog, how to leave a trail someone else can fork the same day), not a vibe or a pep talk. Force articulation before answers. Evangelize by shipping; don't hoard the tools. This book is that practice applied to the search itself: clear the fog, hand over the backpack, and help you see the work the way I see it.
 
 Marc J. Greenberg 8/3/2026  
-marc@codemarc.net
+marc@braintrailz.com
 
 ---
 
