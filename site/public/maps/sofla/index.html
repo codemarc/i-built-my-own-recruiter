@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>South Florida Map — Layer 3: AI + AI-Adjacent + Financial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin:0; background:#e7e3d6; font-family:'Inter',system-ui,sans-serif; }
+  .poster { width:1780px; max-width:100%; margin:20px auto; background:#f4f1e7; border:1px solid #d8d2ba; padding:22px 26px 16px; }
+  .eyebrow { font-size:11px; letter-spacing:2px; color:#8b8570; text-transform:uppercase; margin:0 0 6px; }
+  h1 { font-family:'Playfair Display',Georgia,serif; font-size:30px; font-weight:800; margin:0 0 6px; color:#17171a; line-height:1.15; }
+  .subtitle { font-size:14px; color:#4c4a3f; margin:0 0 4px; }
+  .method { font-size:12px; color:#8b8570; margin:0 0 14px; }
+  .row { position:relative; display:flex; gap:20px; width:1708px; height:900px; margin:0 auto; }
+  .map-wrap { position:relative; width:868px; height:900px; flex:none; background:#fff; border:1px solid #cfc9b0; overflow:hidden; }
+  svg.layer { position:absolute; top:0; left:0; width:100%; height:100%; }
+  svg.connectors { position:absolute; top:0; left:0; width:1708px; height:900px; pointer-events:none; }
+  .mini-card { position:absolute; font-size:10px; color:#3a3930; background:rgba(255,255,255,0.94); border:1px solid #cfc9b0; border-radius:4px; padding:3px 7px; white-space:nowrap; line-height:1.5; }
+  .mini-card a { color:#17171a; font-weight:600; text-decoration:none; border-bottom:1px dotted #b5aa87; }
+  .mini-card a:hover { border-bottom-color:#5C6672; color:#5C6672; }
+  .mini-card .dot-inline { display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:5px; vertical-align:1px; }
+  .marker-label { position:absolute; font-size:11px; color:#3a3930; background:rgba(244,241,231,0.85); padding:1px 5px; border-radius:3px; white-space:nowrap; }
+  .sidebar { position:relative; width:260px; flex:none; height:900px; }
+  .card { position:absolute; width:260px; background:#fff; border:1px solid #d9d3bb; border-radius:8px; padding:6px 10px; }
+  .card .name { font-size:13px; font-weight:600; color:#17171a; margin:0 0 1px; line-height:1.2; }
+  .card .name a, .who .name a, .who .role a { color:inherit; text-decoration:none; border-bottom:1px dotted #b5aa87; }
+  .card .name a:hover, .who .name a:hover, .who .role a:hover { border-bottom-color:#7A5AC8; color:#7A5AC8; }
+  .card .cat { font-size:11px; color:#79765f; margin:0; }
+  .swatch-dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; vertical-align:1px; }
+  .footer { display:flex; justify-content:space-between; align-items:center; border-top:1px solid #cfc9b0; margin-top:10px; padding-top:10px; }
+  .who { display:flex; align-items:center; gap:10px; }
+  .avatar { width:30px; height:30px; border-radius:50%; background:#1e2a5e; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:12px; font-family:'Playfair Display',Georgia,serif; }
+  .who .name { font-size:13px; font-weight:600; color:#17171a; }
+  .who .role { font-size:11px; color:#79765f; }
+  .wordmark { font-family:'Playfair Display',Georgia,serif; font-size:15px; font-weight:800; color:#1e2a5e; }
+  .fineprint { font-size:10.5px; color:#96917a; margin-top:6px; line-height:1.45; }
+  .legend { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:10px 0 2px; font-size:12px; color:#3a3930; }
+  .legend .swatch { display:inline-block; width:20px; height:0; border-top-width:3px; border-top-style:solid; margin-right:6px; vertical-align:2px; }
+  .legend .dot { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:6px; vertical-align:-1px; }
+</style>
+</head>
+<body>
+<div class="poster">
+  <p class="eyebrow">South Florida tech &amp; capital · layer 4 of N · August 2026</p>
+  <h1>The Real Map of South Florida</h1>
+  <p class="subtitle">Jupiter to Homestead. Atlantic Ocean to Gulf of America. Layer 1: 18 AI companies. Layer 2: 9 AI-adjacent businesses. Layer 3: 10 financial advisory, crypto &amp; fintech players. Layer 4: 4 established tech anchors added.</p>
+  <p class="method">Layers 1&ndash;3 gained entries this pass: five AI companies and a crypto infrastructure startup turned up on rescan. New layer: established, pre-AI-era tech anchors headquartered in South Florida for years or decades &mdash; the region's tech base before the current wave. Established Tech name tags sit directly on the map, in the empty Everglades interior, rather than in a sidebar.</p>
+
+  <div class="row">
+  <div class="sidebar">
+    <div class="card" style="top:10px;"><p class="name"><span class="swatch-dot" style="background:#1e2a5e"></span><a href="https://www.wellsfargo.com" target="_blank" rel="noopener">Wells Fargo Wealth &amp; Investment Mgmt HQ</a></p><p class="cat">Bank wealth-management HQ · West Palm Beach</p></div>
+    <div class="card" style="top:100px;"><p class="name"><span class="swatch-dot" style="background:#1e2a5e"></span><a href="https://www.amg.com" target="_blank" rel="noopener">Affiliated Managers Group</a></p><p class="cat">Asset management holding co. HQ · West Palm Beach</p></div>
+    <div class="card" style="top:190px;"><p class="name"><span class="swatch-dot" style="background:#1e2a5e"></span><a href="https://www.elliottmgmt.com" target="_blank" rel="noopener">Elliott Management</a></p><p class="cat">Hedge fund HQ · West Palm Beach</p></div>
+    <div class="card" style="top:280px;"><p class="name"><span class="swatch-dot" style="background:#4C8C4A"></span><a href="https://www.ecapital.com" target="_blank" rel="noopener">eCapital</a></p><p class="cat">Invoice &amp; receivables fintech · Fort Lauderdale</p></div>
+    <div class="card" style="top:370px;"><p class="name"><span class="swatch-dot" style="background:#F2A900"></span><a href="https://www.cyclops.ai" target="_blank" rel="noopener">Cyclops</a></p><p class="cat">Stablecoin &amp; crypto payments infra · Miami</p></div>
+    <div class="card" style="top:460px;"><p class="name"><span class="swatch-dot" style="background:#4C8C4A"></span><a href="https://www.novo.co" target="_blank" rel="noopener">Novo</a></p><p class="cat">Business banking fintech · Miami</p></div>
+    <div class="card" style="top:550px;"><p class="name"><span class="swatch-dot" style="background:#F2A900"></span><a href="https://www.blockchain.com" target="_blank" rel="noopener">Blockchain.com</a></p><p class="cat">Crypto exchange &amp; wallet, U.S. HQ · Miami</p></div>
+    <div class="card" style="top:640px;"><p class="name"><span class="swatch-dot" style="background:#F2A900"></span><a href="https://www.moonpay.com" target="_blank" rel="noopener">MoonPay</a></p><p class="cat">Crypto payments infrastructure · Miami</p></div>
+    <div class="card" style="top:730px;"><p class="name"><span class="swatch-dot" style="background:#F2A900"></span><a href="https://panteracapital.com" target="_blank" rel="noopener">Pantera Capital</a></p><p class="cat">Crypto &amp; digital-asset VC · Miami Beach</p></div>
+    <div class="card" style="top:820px;"><p class="name"><span class="swatch-dot" style="background:#1e2a5e"></span><a href="https://www.citadel.com" target="_blank" rel="noopener">Citadel</a></p><p class="cat">Hedge fund &amp; market-maker HQ · Brickell, Miami</p></div>
+  </div>
+  <div class="map-wrap">
+    <svg class="layer" viewBox="0 0 868 900" preserveAspectRatio="xMidYMid meet">
+      <rect x="0" y="0" width="868" height="900" fill="#bcdce8"/>
+      <rect x="0" y="0" width="755" height="225" fill="#ede4d0"/>
+      <path d="M177,97.3 L295.8,97.7 L295.8,57.9 L336.4,57.5 L334.9,18.1 L426.2,17.7 L439.3,33.9 L455.2,42.8 L449.4,131 L426.2,216.4 L175.5,216 L177,97.3 Z M449.4,131 L750.8,132.1 L750.8,125.6 L775.5,126 L794.3,204 L792.8,294.9 L782.7,362.5 L776.9,418.2 L724.7,415.1 L687.1,402.7 L687.1,412 L452.3,412.4 L449.4,227.6 L449.4,131 Z M-24.4,215.6 L175.5,216 L175.5,331.6 L177,372.2 L137.9,373 L137.9,419.8 L72.7,420.1 L62.5,414 L52.4,391.9 L11.8,348.2 L-4.1,344.8 L-5.6,324.7 L-23,315.8 L-23,340.5 L-43.3,344.8 L-44.7,319.2 L-56.3,275.6 L-73.7,255.8 L-69.4,246.6 L-50.5,247.7 L-37.5,262.8 L-24.4,215.6 Z M-107,248.1 L-99.8,255.1 L-72.3,336.6 L-60.7,347.5 L-36,357.5 L-25.9,350.9 L-5.6,359.1 L-25.9,371 L-38.9,371.4 L-69.4,352.1 L-79.5,341.3 L-98.3,296.8 L-107,267.4 L-107,248.1 Z M-109.9,207.1 L-88.2,216.4 L-101.2,219.1 L-108.5,238.4 L-109.9,207.1 Z M607.4,922.7 L607.4,910.3 L637.8,906.1 L647.9,898.3 L655.2,874.8 L671.1,882.1 L690,869 L698.7,853.9 L705.9,858.5 L675.5,911.9 L662.4,943.6 L626.2,979.5 L576.9,1033.3 L542.2,1058.8 L537.8,1054.1 L587.1,1007 L607.4,991.5 L617.5,971 L621.9,939.7 L629.1,927.3 L620.4,918.4 L607.4,922.7 Z M504.5,1076.5 L524.8,1053.4 L532,1066.1 L511.7,1083.1 L504.5,1076.5 Z M463.9,1100.9 L476.9,1085.8 L492.9,1084.3 L485.6,1097 L463.9,1100.9 Z M353.8,1144.2 L429.1,1109.4 L437.8,1121 L372.6,1151.9 L353.8,1144.2 Z M214.7,650.9 L455.2,650.2 L455.2,848.9 L459.6,848.5 L461,933.1 L443.6,939.7 L443.6,949.7 L404.5,956.7 L371.2,959 L346.5,938.9 L334.9,912.6 L337.8,882.1 L346.5,858.9 L355.2,860.1 L352.3,841.1 L334.9,803.6 L319,785.5 L321.9,772.3 L310.3,748.3 L294.4,736 L287.1,703.1 L278.4,696.2 L262.5,702 L249.4,662.9 L214.7,650.9 Z M75.6,1206.4 L103.1,1165.5 L132.1,1147.7 L168.3,1131.1 L172.6,1122.2 L224.8,1096.6 L279.9,1122.5 L285.7,1142.7 L306,1159.3 L300.2,1163.5 L242.2,1182.1 L237.8,1171.6 L198.7,1173.6 L194.4,1182.9 L127.7,1211.1 L75.6,1216.9 L75.6,1206.4 Z M-5.6,1218 L50.9,1208.8 L36.4,1225.4 L11.8,1230.8 L-7,1227.7 L-5.6,1218 Z M-66.5,1209.1 L-57.8,1195.6 L-40.4,1199.5 L-47.6,1215.3 L-66.5,1209.1 Z M-376.6,1177.8 L-354.8,1172.8 L-349,1181.7 L-378,1185.6 L-376.6,1177.8 Z M175.5,216 L426.2,216.4 L449.4,131 L449.4,227.6 L452.3,412.4 L452.3,445.7 L295.8,448.7 L294.4,329.7 L175.5,331.6 L175.5,216 Z M698.7,853.9 L726.2,794 L736.3,778.1 L736.3,794 L724.7,826 L705.9,858.5 L698.7,853.9 Z M455.2,650.2 L455.2,571.7 L533.5,572.1 L533.5,581.7 L682.7,581.7 L688.5,575.9 L759.5,573.6 L759.5,633.9 L755.2,664.8 L745,696.2 L745,713.2 L736.3,704.3 L740.7,684.6 L733.4,676.8 L710.2,686.5 L695.8,725.9 L687.1,732.5 L685.6,757.2 L674,772.7 L671.1,802.9 L678.4,815.6 L675.5,833.4 L684.2,839.6 L672.6,860.1 L655.2,874.8 L647.9,898.3 L637.8,906.1 L607.4,910.3 L607.4,922.7 L597.2,912.6 L588.5,919.6 L539.3,928.1 L519,944 L505.9,946.3 L479.8,928.9 L461,933.1 L459.6,848.5 L455.2,848.9 L455.2,650.2 Z M452.3,412.4 L687.1,412 L687.1,402.7 L724.7,415.1 L776.9,418.2 L771.1,458 L759.5,573.6 L688.5,575.9 L682.7,581.7 L533.5,581.7 L533.5,572.1 L455.2,571.7 L452.3,445.7 L452.3,412.4 Z M62.5,414 L72.7,420.1 L137.9,419.8 L137.9,373 L177,372.2 L175.5,331.6 L294.4,329.7 L295.8,448.7 L452.3,445.7 L455.2,571.7 L455.2,650.2 L214.7,650.9 L213.2,644.7 L182.8,630.1 L152.4,608.8 L136.4,613.8 L124.8,628.9 L101.6,580.2 L79.9,523 L72.7,456.1 L62.5,414 Z" fill="#ede4d0" stroke="#c7bd9e" stroke-width="1"/>
+      <path d="M464.3,49.5 L516.8,67.5 L532.9,94.5 L553.1,139.5 L541,189 L516.8,220.5 L488.5,243 L452.2,247.5 L415.8,225 L395.6,202.5 L367.4,175.5 L379.5,130.5 L403.7,99 L411.8,72 L436,54 L464.3,49.5 Z" fill="#bcdce8" stroke="#9fc3d4" stroke-width="1.5"/>
+      <text x="820" y="450" font-size="13" letter-spacing="3" fill="#7ea3b8" font-family="Inter,sans-serif" transform="rotate(90 820 450)">ATLANTIC OCEAN</text>
+      <text x="55" y="500" font-size="13" letter-spacing="3" fill="#7ea3b8" font-family="Inter,sans-serif" transform="rotate(-90 55 500)">GULF OF AMERICA</text>
+      <text x="200" y="700" font-size="12" letter-spacing="2" fill="#9fa985" font-family="Inter,sans-serif">EVERGLADES</text>
+      <text x="484.5" y="145" font-size="11" letter-spacing="1" fill="#6f92a3" font-family="Inter,sans-serif" text-anchor="middle">LAKE OKEECHOBEE</text>
+      <g stroke="#fff" stroke-width="1.5">
+        <circle cx="769.4" cy="142.1" r="6" fill="#1e2a5e"/>
+        <circle cx="614.6" cy="801.6" r="6" fill="#1e2a5e"/>
+        <circle cx="785.9" cy="240.6" r="4" fill="#8b8570"/>
+        <circle cx="752" cy="507.4" r="4" fill="#8b8570"/>
+        <circle cx="730" cy="669.7" r="4" fill="#8b8570"/>
+        <circle cx="82.8" cy="498.6" r="4" fill="#8b8570"/>
+        <circle cx="755.4" cy="396.8" r="4" fill="#8b8570"/>
+        <circle cx="51.6" cy="274.2" r="4" fill="#8b8570"/>
+        <circle cx="646.1" cy="517.3" r="4" fill="#8b8570"/>
+        <circle cx="537.9" cy="254.5" r="4" fill="#8b8570"/>
+        <circle cx="711.4" cy="422.9" r="4" fill="#8b8570"/>
+      </g>
+      <g stroke="#fff" stroke-width="1.3" fill="#2c2c2a">
+        <polygon points="768.8,249.1 774.8,255.1 768.8,261.1 762.8,255.1"/>
+        <polygon points="746.6,523.1 752.6,529.1 746.6,535.1 740.6,529.1"/>
+        <polygon points="691.6,648.3 697.6,654.3 691.6,660.3 685.6,654.3"/>
+      </g>
+    </svg>
+
+    <svg class="layer" viewBox="0 0 868 900" preserveAspectRatio="xMidYMid meet">
+      <path d="M613.7,801 L625.8,765 L633.8,742.5 L650,706.5 L666.1,675 L678.3,639 L686.3,607.5 L698.4,571.5 L706.5,540 L718.6,517.5 L726.7,495 L738.8,450 L746.9,405 L752.9,360 L755,315 L763,279 L767.1,243 L763,202.5 L759,144 L759,90 L755,45" fill="none" stroke="#c9820a" stroke-width="2.4" stroke-dasharray="8 4"/>
+      <path d="M84.8,499.5 L181.7,501.7 L323,506.3 L432,526.5 L504.7,528.8 L565.2,531 L617.7,528.8 L646,517.5 L672.2,504 L686.3,477 L698.4,427.5 L702.5,360 L694.4,292.5 L686.3,225 L678.3,157.5 L670.2,90" fill="none" stroke="#b23a2e" stroke-width="2.8"/>
+      <path d="M730.7,661.5 L744.9,607.5 L748.9,558 L750.9,508.5 L761,463.5 L767.1,423 L777.2,360 L783.2,301.5 L787.3,243 L783.2,202.5 L771.1,144 L775.1,90 L787.3,45" fill="none" stroke="#b23a2e" stroke-width="2.8"/>
+      <text x="805" y="330" font-size="10.5" font-weight="600" fill="#8f2a20" font-family="Inter,sans-serif" transform="rotate(83 805 330)">I-95</text>
+      <text x="330" y="512" font-size="10.5" font-weight="600" fill="#8f2a20" font-family="Inter,sans-serif">I-75 · ALLIGATOR ALLEY</text>
+      <text x="712" y="330" font-size="10.5" font-weight="600" fill="#9c6606" font-family="Inter,sans-serif" transform="rotate(80 712 330)">FLORIDA'S TURNPIKE</text>
+    </svg>
+
+    <svg class="layer" viewBox="0 0 868 900" preserveAspectRatio="xMidYMid meet">
+      <g stroke="#fff" stroke-width="1.3">
+        <circle cx="775" cy="372" r="6" fill="#7A5AC8"/>
+        <circle cx="764" cy="380" r="6" fill="#7A5AC8"/>
+        <circle cx="749" cy="393" r="6" fill="#7A5AC8"/>
+        <circle cx="708.5" cy="504" r="6" fill="#7A5AC8"/>
+        <circle cx="761.0" cy="570.0" r="6" fill="#7A5AC8"/>
+        <circle cx="751" cy="582" r="6" fill="#7A5AC8"/>
+        <circle cx="720" cy="644" r="6" fill="#7A5AC8"/>
+        <circle cx="735" cy="652" r="6" fill="#7A5AC8"/>
+        <circle cx="718.6" cy="653.2" r="6" fill="#7A5AC8"/>
+        <circle cx="740" cy="662" r="6" fill="#7A5AC8"/>
+        <circle cx="718" cy="664" r="6" fill="#7A5AC8"/>
+        <circle cx="784" cy="668" r="6" fill="#7A5AC8"/>
+        <circle cx="692.6" cy="672.3" r="6" fill="#7A5AC8"/>
+        <circle cx="728" cy="676" r="6" fill="#7A5AC8"/>
+        <circle cx="744" cy="676" r="6" fill="#7A5AC8"/>
+        <circle cx="700" cy="678" r="6" fill="#7A5AC8"/>
+        <circle cx="708.7" cy="686.4" r="6" fill="#7A5AC8"/>
+        <circle cx="717.6" cy="691.7" r="6" fill="#7A5AC8"/>
+      </g>
+    </svg>
+
+    <svg class="layer" viewBox="0 0 868 900" preserveAspectRatio="xMidYMid meet">
+      <g stroke="#fff" stroke-width="1.3">
+        <circle cx="760" cy="350" r="6" fill="#D0483B"/>
+        <circle cx="785" cy="365" r="6" fill="#1F8A6E"/>
+        <circle cx="770" cy="402" r="6" fill="#7A5AC8"/>
+        <circle cx="760" cy="594" r="6" fill="#2255AA"/>
+        <circle cx="716" cy="622" r="6" fill="#2255AA"/>
+        <circle cx="744" cy="634" r="6" fill="#1F8A6E"/>
+        <circle cx="706" cy="656" r="6" fill="#2255AA"/>
+        <circle cx="756" cy="668" r="6" fill="#C2447A"/>
+        <circle cx="730" cy="688" r="6" fill="#B5762A"/>
+      </g>
+    </svg>
+
+    <svg class="layer" viewBox="0 0 868 900" preserveAspectRatio="xMidYMid meet">
+      <g stroke="#fff" stroke-width="1.3">
+        <circle cx="790" cy="225" r="6" fill="#1e2a5e"/>
+        <circle cx="800" cy="240" r="6" fill="#1e2a5e"/>
+        <circle cx="765" cy="270" r="6" fill="#1e2a5e"/>
+        <circle cx="735" cy="510" r="6" fill="#4C8C4A"/>
+        <circle cx="700" cy="644" r="6" fill="#4C8C4A"/>
+        <circle cx="775.8" cy="636.7" r="6" fill="#F2A900"/>
+        <circle cx="760" cy="646" r="6" fill="#F2A900"/>
+        <circle cx="748" cy="650" r="6" fill="#F2A900"/>
+        <circle cx="774" cy="656" r="6" fill="#F2A900"/>
+        <circle cx="710" cy="670" r="6" fill="#1e2a5e"/>
+      </g>
+    </svg>
+
+    <svg class="layer" viewBox="0 0 868 900" preserveAspectRatio="xMidYMid meet">
+      <g stroke="#fff" stroke-width="1.3">
+        <circle cx="750.6" cy="372.1" r="6" fill="#5C6672"/>
+        <circle cx="710.6" cy="484.8" r="6" fill="#5C6672"/>
+        <circle cx="586.0" cy="513.6" r="6" fill="#5C6672"/>
+        <circle cx="739.6" cy="543.0" r="6" fill="#5C6672"/>
+      </g>
+    </svg>
+
+    <svg class="layer" viewBox="0 0 868 900" preserveAspectRatio="xMidYMid meet">
+      <g stroke="#a8a4ac" stroke-width="0.8">
+        <line x1="278" y1="665" x2="750.6" y2="372.1"/>
+        <line x1="278" y1="700" x2="710.6" y2="484.8"/>
+        <line x1="278" y1="735" x2="586.0" y2="513.6"/>
+        <line x1="278" y1="770" x2="739.6" y2="543.0"/>
+      </g>
+    </svg>
+
+    <div class="mini-card" style="left:118px; top:658px;"><span class="dot-inline" style="background:#5C6672"></span><a href="https://www.adt.com" target="_blank" rel="noopener">ADT</a> — security tech HQ · Boca Raton</div>
+    <div class="mini-card" style="left:118px; top:693px;"><span class="dot-inline" style="background:#5C6672"></span><a href="https://www.chewy.com" target="_blank" rel="noopener">Chewy</a> — e-commerce, dual HQ · Plantation</div>
+    <div class="mini-card" style="left:118px; top:728px;"><span class="dot-inline" style="background:#5C6672"></span><a href="https://www.ukg.com" target="_blank" rel="noopener">UKG</a> — workforce software, dual HQ · Weston</div>
+    <div class="mini-card" style="left:118px; top:763px;"><span class="dot-inline" style="background:#5C6672"></span><a href="https://www.citrix.com" target="_blank" rel="noopener">Citrix Systems</a> — cloud/virtualization HQ · Ft. Lauderdale</div>
+
+    <div class="marker-label" style="left:750px; top:120px; font-weight:600;">JUPITER</div>
+    <div class="marker-label" style="left:552px; top:788px; font-weight:600;">HOMESTEAD</div>
+    <div class="marker-label" style="left:675px; top:233px;">West Palm Beach</div>
+    <div class="marker-label" style="left:766px; top:500px;">Fort Lauderdale</div>
+    <div class="marker-label" style="left:738px; top:662px;">Miami</div>
+    <div class="marker-label" style="left:18px; top:491px;">Naples</div>
+    <div class="marker-label" style="left:778px; top:243px; font-weight:600;">PBI</div>
+    <div class="marker-label" style="left:756px; top:517px; font-weight:600;">FLL</div>
+    <div class="marker-label" style="left:642px; top:646px; font-weight:600;">MIA</div>
+    <div class="marker-label" style="left:766px; top:389px;">Boca Raton</div>
+    <div class="marker-label" style="left:60px; top:267px;">Fort Myers</div>
+    <div class="marker-label" style="left:600px; top:510px;">Weston</div>
+    <div class="marker-label" style="left:437px; top:248px;">Belle Glade</div>
+    <div class="marker-label" style="left:721px; top:416px;">Parkland</div>
+  </div>
+
+  <svg class="connectors" viewBox="0 0 1708 900" preserveAspectRatio="none">
+    <g stroke="#a7a28c" stroke-width="0.8">
+      <line x1="1055" y1="372" x2="1168" y2="28"/>
+      <line x1="1044" y1="380" x2="1168" y2="78"/>
+      <line x1="1029" y1="393" x2="1168" y2="128"/>
+      <line x1="988.5" y1="504" x2="1168" y2="178"/>
+      <line x1="1041.0" y1="570.0" x2="1168" y2="228"/>
+      <line x1="1031" y1="582" x2="1168" y2="278"/>
+      <line x1="1000" y1="644" x2="1168" y2="328"/>
+      <line x1="1015" y1="652" x2="1168" y2="378"/>
+      <line x1="998.6" y1="653.2" x2="1168" y2="428"/>
+      <line x1="1020" y1="662" x2="1168" y2="478"/>
+      <line x1="998" y1="664" x2="1168" y2="528"/>
+      <line x1="1064" y1="668" x2="1168" y2="578"/>
+      <line x1="972.6" y1="672.3" x2="1168" y2="628"/>
+      <line x1="1008" y1="676" x2="1168" y2="678"/>
+      <line x1="1024" y1="676" x2="1168" y2="728"/>
+      <line x1="980" y1="678" x2="1168" y2="778"/>
+      <line x1="988.7" y1="686.4" x2="1168" y2="828"/>
+      <line x1="997.6" y1="691.7" x2="1168" y2="878"/>
+    </g>
+    <g stroke="#b0ac93" stroke-width="0.8">
+      <line x1="1040" y1="350" x2="1448" y2="38"/>
+      <line x1="1065" y1="365" x2="1448" y2="138"/>
+      <line x1="1050" y1="402" x2="1448" y2="238"/>
+      <line x1="1040" y1="594" x2="1448" y2="338"/>
+      <line x1="996" y1="622" x2="1448" y2="438"/>
+      <line x1="1024" y1="634" x2="1448" y2="538"/>
+      <line x1="986" y1="656" x2="1448" y2="638"/>
+      <line x1="1036" y1="668" x2="1448" y2="738"/>
+      <line x1="1010" y1="688" x2="1448" y2="838"/>
+    </g>
+    <g stroke="#9d97ac" stroke-width="0.8">
+      <line x1="1070" y1="225" x2="260" y2="32"/>
+      <line x1="1080" y1="240" x2="260" y2="122"/>
+      <line x1="1045" y1="270" x2="260" y2="212"/>
+      <line x1="1015" y1="510" x2="260" y2="302"/>
+      <line x1="1055.8" y1="636.7" x2="260" y2="392"/>
+      <line x1="980" y1="644" x2="260" y2="482"/>
+      <line x1="1040" y1="646" x2="260" y2="572"/>
+      <line x1="1028" y1="650" x2="260" y2="662"/>
+      <line x1="1054" y1="656" x2="260" y2="752"/>
+      <line x1="990" y1="670" x2="260" y2="842"/>
+    </g>
+  </svg>
+
+  <div class="sidebar">
+    <div class="card" style="top:6px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://www.sensormatic.com" target="_blank" rel="noopener">Sensormatic Solutions</a></p><p class="cat">AI retail computer vision (Johnson Controls) · Boca Raton</p></div>
+    <div class="card" style="top:56px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://www.dwavequantum.com" target="_blank" rel="noopener">D-Wave Quantum</a></p><p class="cat">Quantum computing HQ · Boca Raton</p></div>
+    <div class="card" style="top:106px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://www.modmed.com" target="_blank" rel="noopener">ModMed</a></p><p class="cat">Healthcare AI / EMR · Boca Raton</p></div>
+    <div class="card" style="top:156px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://www.magicleap.com" target="_blank" rel="noopener">Magic Leap</a></p><p class="cat">AI spatial computing / AR glasses · Plantation</p></div>
+    <div class="card" style="top:206px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://www.sardine.ai" target="_blank" rel="noopener">Sardine</a></p><p class="cat">AI fraud &amp; risk detection · North Miami Beach</p></div>
+    <div class="card" style="top:256px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://www.palantir.com" target="_blank" rel="noopener">Palantir Technologies</a></p><p class="cat">Enterprise &amp; government AI · Aventura</p></div>
+    <div class="card" style="top:306px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://www.openevidence.com" target="_blank" rel="noopener">OpenEvidence</a></p><p class="cat">Medical AI search engine · Edgewater</p></div>
+    <div class="card" style="top:356px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://www.oneimaging.com" target="_blank" rel="noopener">OneImaging</a></p><p class="cat">AI radiology network · Edgewater</p></div>
+    <div class="card" style="top:406px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://www.kaseya.com" target="_blank" rel="noopener">Kaseya</a></p><p class="cat">Agentic AI IT management &amp; cybersecurity · Brickell</p></div>
+    <div class="card" style="top:456px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://www.guardz.com" target="_blank" rel="noopener">Guardz</a></p><p class="cat">AI cybersecurity for MSPs · Brickell</p></div>
+    <div class="card" style="top:506px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://www.varonis.com" target="_blank" rel="noopener">Varonis</a></p><p class="cat">Data security AI · Brickell</p></div>
+    <div class="card" style="top:556px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://huggingface.co" target="_blank" rel="noopener">Hugging Face</a></p><p class="cat">Open-source AI / ML models · Miami Beach</p></div>
+    <div class="card" style="top:606px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://www.dermasensor.com" target="_blank" rel="noopener">DermaSensor</a></p><p class="cat">AI skin-cancer detection device · Downtown Miami</p></div>
+    <div class="card" style="top:656px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://cast.ai" target="_blank" rel="noopener">Cast AI</a></p><p class="cat">AI cloud cost optimization · Brickell</p></div>
+    <div class="card" style="top:706px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://hut8.com" target="_blank" rel="noopener">Hut 8</a></p><p class="cat">AI data center infrastructure · Brickell</p></div>
+    <div class="card" style="top:756px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://www.kandji.io" target="_blank" rel="noopener">Kandji (Iru)</a></p><p class="cat">Apple device security AI · Coral Gables</p></div>
+    <div class="card" style="top:806px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://www.subquadratic.ai" target="_blank" rel="noopener">Subquadratic</a></p><p class="cat">Long-context LLM infrastructure · Miami</p></div>
+    <div class="card" style="top:856px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://www.coreaiholdings.com" target="_blank" rel="noopener">Core AI Holdings</a></p><p class="cat">AI infrastructure &amp; HomeGPT (Nasdaq: CHAI) · Miami</p></div>
+  </div>
+
+  <div class="sidebar">
+    <div class="card" style="top:10px;"><p class="name"><span class="swatch-dot" style="background:#D0483B"></span><a href="https://www.fau.edu/engineering/research/fpl-center-intelligent-energy-technologies/" target="_blank" rel="noopener">FPL InETech Center</a></p><p class="cat">AI-enabled smart grid research (FAU) · Boca Raton</p></div>
+    <div class="card" style="top:110px;"><p class="name"><span class="swatch-dot" style="background:#1F8A6E"></span><a href="https://www.bocaratoninnovation.com" target="_blank" rel="noopener">Boca Raton Innovation Campus</a></p><p class="cat">1.7M SF tech &amp; quantum campus (BRiC) · Boca Raton</p></div>
+    <div class="card" style="top:210px;"><p class="name"><span class="swatch-dot" style="background:#7A5AC8"></span><a href="https://guident.com" target="_blank" rel="noopener">Guident Corp</a></p><p class="cat">Autonomous vehicle AI teleoperation · Boca Raton</p></div>
+    <div class="card" style="top:310px;"><p class="name"><span class="swatch-dot" style="background:#2255AA"></span><a href="https://blumbergcapital.com" target="_blank" rel="noopener">Blumberg Capital</a></p><p class="cat">Early-stage AI &amp; startup VC · Sunny Isles Beach</p></div>
+    <div class="card" style="top:410px;"><p class="name"><span class="swatch-dot" style="background:#2255AA"></span><a href="https://www.theventure.city" target="_blank" rel="noopener">TheVentureCity</a></p><p class="cat">Early-stage AI &amp; data VC · Miami</p></div>
+    <div class="card" style="top:510px;"><p class="name"><span class="swatch-dot" style="background:#1F8A6E"></span><a href="https://www.equinix.com" target="_blank" rel="noopener">Equinix MI1 (NAP of the Americas)</a></p><p class="cat">AI &amp; cloud connectivity hub · Downtown Miami</p></div>
+    <div class="card" style="top:610px;"><p class="name"><span class="swatch-dot" style="background:#2255AA"></span><a href="https://www.latinamericafund.com" target="_blank" rel="noopener">SoftBank Latin America Fund</a></p><p class="cat">AI &amp; startup capital · Miami</p></div>
+    <div class="card" style="top:710px;"><p class="name"><span class="swatch-dot" style="background:#C2447A"></span><a href="https://www.emergeamericas.com" target="_blank" rel="noopener">eMerge Americas</a></p><p class="cat">Tech ecosystem convener · Miami</p></div>
+    <div class="card" style="top:810px;"><p class="name"><span class="swatch-dot" style="background:#B5762A"></span><a href="https://www.gtlaw.com" target="_blank" rel="noopener">Greenberg Traurig</a></p><p class="cat">AI &amp; innovation legal practice · Miami</p></div>
+  </div>
+  </div>
+
+  <div class="legend">
+    <span><span class="swatch" style="border-color:#b23a2e;"></span>Interstate (I-95, I-75)</span>
+    <span><span class="swatch" style="border-color:#c9820a; border-top-style:dashed;"></span>Florida's Turnpike (toll)</span>
+    <span>&#9670;&nbsp; Major airport (PBI, FLL, MIA)</span>
+    <span><span class="dot" style="background:#7A5AC8"></span>AI company / applied AI-robotics</span>
+    <span><span class="dot" style="background:#2255AA"></span>Capital &amp; venture</span>
+    <span><span class="dot" style="background:#1F8A6E"></span>Compute &amp; infrastructure</span>
+    <span><span class="dot" style="background:#D0483B"></span>Power &amp; energy research</span>
+    <span><span class="dot" style="background:#B5762A"></span>Professional services</span>
+    <span><span class="dot" style="background:#C2447A"></span>Ecosystem &amp; convener</span>
+    <span><span class="dot" style="background:#1e2a5e"></span>Financial advisory / hedge fund</span>
+    <span><span class="dot" style="background:#F2A900"></span>Crypto</span>
+    <span><span class="dot" style="background:#4C8C4A"></span>Fintech</span>
+    <span><span class="dot" style="background:#5C6672"></span>Established tech (pre-AI era)</span>
+  </div>
+
+  <div class="footer">
+    <div class="who">
+      <div class="avatar">MG</div>
+      <div>
+        <div class="name"><a href="https://codemarc.net" target="_blank" rel="noopener">Marc J. Greenberg</a></div>
+        <div class="role"><a href="https://www.linkedin.com/in/codemarc/" target="_blank" rel="noopener">CodeMarc</a> · <a href="https://codemarc.net" target="_blank" rel="noopener">Braintrailz</a></div>
+      </div>
+    </div>
+    <div class="wordmark">South Florida Map · Layer 4</div>
+  </div>
+  <p class="fineprint">Layer 0: coastline derived from U.S. Census Bureau cartographic county boundaries (via the us-atlas dataset). Lake Okeechobee is a hand-approximated ellipse at its correct position and scale. Roads (I-95, I-75, Florida's Turnpike) are hand-traced through known waypoints. Layer 1: 18 AI companies at roughly $25M+ in disclosed funding, revenue, or market cap. Sensormatic Solutions is Johnson Controls' AI retail division, not an independent company. Added on rescan: Hugging Face (Miami Beach office), Kaseya (Brickell, agentic IT/cybersecurity, $1.75B valuation), DermaSensor (FDA-cleared AI skin-cancer device), Sardine (AI fraud detection, North Miami Beach), Subquadratic (long-context LLM startup, $29M seed), and Core AI Holdings (Nasdaq: CHAI, HomeGPT). Layer 2: 9 AI-adjacent capital, compute, energy, and advisory players &mdash; the money and infrastructure behind the AI companies. FPL InETech Center sits on FAU's Boca Raton campus (not Juno Beach, despite FPL's HQ location there); D-Wave Quantum (layer 1) and Boca Raton Innovation Campus are the same physical site, listed separately as tenant and campus. Blumberg Capital and SoftBank Latin America Fund are headquartered elsewhere with a substantial Miami presence. Layer 3: 10 financial advisory, crypto, and fintech companies, name tags on the left sidebar (opposite layers 1, 2 &amp; 4). Elliott Management, Affiliated Managers Group, and Wells Fargo's Wealth &amp; Investment Management division are headquartered in West Palm Beach; Citadel's headquarters is in Brickell, Miami. Blockchain.com relocated its U.S. headquarters to Miami; Cyclops (stablecoin/crypto payments infrastructure, Mastercard client, $20M Series A) is Miami-based with a second office in Vienna; Pantera Capital and MoonPay operate from South Florida but are headquartered elsewhere. Layer 4: 4 established tech companies with South Florida roots that predate the current AI wave &mdash; Citrix (Fort Lauderdale), UKG/Ultimate Software (Weston, dual HQ with Lowell, MA), Chewy (Plantation, dual HQ with Boston), and ADT (Boca Raton). Their name tags sit on the map itself, in the empty Everglades interior, with leader lines running out to their real coastal locations, rather than in a sidebar. All positions are by neighborhood, not street address, and spread slightly where companies cluster for legibility. Compiled from public filings, company announcements, and press coverage as of August 2026.</p>
+</div>
+</body>
+</html>
