@@ -2,9 +2,9 @@
 
 ### A field guide to running your job search like a software project
 
-**Premise:** One engineer's system for scoring, sweeping, and outreach automation, built over an active search and open-sourced so anyone can fork it for theirs. Part memoir, part manual. Every chapter ships as a standalone blog post and doubles as a chapter in this repo's `book/` folder.
+**Premise:** One engineer's system for scoring, sweeping, and outreach automation, built over an active search and open-sourced so you can fork it for yours. Part memoir, part manual. Each chapter is a blog post and a chapter in `book/`.
 
-**Read online:** [braintrailz.com/recruiter](https://braintrailz.com/recruiter/) — Braintrailz pillar three (Mission-Driven Projects).
+**Read online:** [braintrailz.com/recruiter](https://braintrailz.com/recruiter/) — A [braintrailz](https://braintrailz.com) mission driven project.
 
 ---
 

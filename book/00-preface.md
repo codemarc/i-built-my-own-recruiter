@@ -14,10 +14,7 @@ That sharing is also how I think about mentorship. Mentor from inside the craft,
 
 Marc J. Greenberg 8/3/2026  
 marc@braintrailz.com
-
----
-
-
+[braintrailz.com](https://braintrailz./com)
 
 ## What this book is
 
